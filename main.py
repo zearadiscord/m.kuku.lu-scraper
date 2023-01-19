@@ -1,6 +1,7 @@
 import tls_client,random
+print("Domainnameはipの国ごとに違う場合があります\n日本ではeripo.comやna-cat.comが使えます")
 
-
+domainname = input("Domainname > ")
 class breakflare():
   def __init__(self,session = tls_client.Session(client_identifier="chrome_108")):
     self.session = session
