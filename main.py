@@ -30,9 +30,8 @@ class breakflare():
 def randstr(x):
   randoms = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
   return "".join(random.choice(randoms) for i in range(x))
-
 headers = {}
 session = breakflare()
 setupcontent = session.get("https://m.kuku.lu/index.php")
 headers["cookie"] = setupcontent.headers["Set-Cookie"]
-print(breakflare().get(f"https://m.kuku.lu/index.php?action=addMailAddrByManual&nopost=1&by_system=1&t=1674135384&csrf_token_check={str(str(headers['cookie']).split('cookie_csrf_token=')[1]).split(';')[0]}&newdomain=sika3.com&newuser=alpha{randstr(6)}",headers=headers).text.replace("OK:",""))
+print(breakflare().get(f"https://m.kuku.lu/index.php?action=addMailAddrByManual&nopost=1&by_system=1&csrf_token_check={str(str(headers['cookie']).split('cookie_csrf_token=')[1]).split(';')[0]}&newdomain={domainname}&newuser=alpha{randstr(6)}",headers=headers).text.replace("OK:",""))
